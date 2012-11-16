@@ -44,11 +44,15 @@
 	</form>
 
 	<!-- FACEBOOK SIGNIN -->
-	<form name="fb_signin" id="fb_signin" action="<c:url value="/signin/facebook"/>" method="POST">
+<%--
+ 	<form name="fb_signin" id="fb_signin" action="<c:url value="/signin/facebook"/>" method="POST">
         <input type="hidden" name="scope" value="publish_stream,user_photos,offline_access" />
 		<button type="submit"><img src="<c:url value="/resources/social/facebook/sign-in-with-facebook.png"/>" /></button>
 	</form>
-
+ --%>
+ 
+    <a href="<c:url value="/auth/facebook"/>"><img src="<c:url value="/resources/social/facebook/sign-in-with-facebook.png"/>" border="0"/></a><br/>
+ 
 	<!-- LINKEDIN SIGNIN -->
 	<form name="li_signin" id="li_signin" action="<c:url value="/signin/linkedin"/>" method="POST">
 		<button type="submit">Sign In with LinkedIn</button>
