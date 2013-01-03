@@ -1,8 +1,5 @@
 package org.springframework.social.showcase.config;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.inject.Inject;
 
 import org.springframework.context.annotation.Bean;
@@ -18,7 +15,6 @@ import org.springframework.social.security.SocialAuthenticationProvider;
 import org.springframework.social.security.SocialAuthenticationServiceRegistry;
 import org.springframework.social.security.SocialUserDetailsService;
 import org.springframework.social.security.UserIdExtractor;
-import org.springframework.social.security.provider.SocialAuthenticationService;
 import org.springframework.social.showcase.security.AuthenticationUserIdExtractor;
 import org.springframework.social.showcase.security.FacebookAuthenticationService;
 import org.springframework.social.showcase.security.SimpleSocialUsersDetailService;
@@ -59,12 +55,9 @@ public class SocialSecurityConfig {
 	@Bean
 	public SocialAuthenticationServiceRegistry authenticationServiceLocator() {
 		SocialAuthenticationServiceRegistry authenticationServiceRegistry = new SocialAuthenticationServiceRegistry();
-		List<SocialAuthenticationService<?>> authenticationServices = new ArrayList<SocialAuthenticationService<?>>();
-		FacebookAuthenticationService facebookAuthenticationService = new FacebookAuthenticationService(environment.getProperty("facebook.clientId"),
-				environment.getProperty("facebook.clientSecret"));
+		FacebookAuthenticationService facebookAuthenticationService = new FacebookAuthenticationService(environment.getProperty("facebook.clientId"), environment.getProperty("facebook.clientSecret"));
 		facebookAuthenticationService.setScope("user_about_me");
-		authenticationServices.add(facebookAuthenticationService);
-		authenticationServiceRegistry.setAuthenticationServices(authenticationServices);
+		authenticationServiceRegistry.addAuthenticationService(facebookAuthenticationService);
 		return authenticationServiceRegistry;
 	}
 	
