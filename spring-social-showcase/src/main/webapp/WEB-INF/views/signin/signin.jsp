@@ -39,22 +39,11 @@
 </form>
 
 	<!-- TWITTER SIGNIN -->
-	<form id="tw_signin" action="<c:url value="/signin/twitter"/>" method="POST">
-		<button type="submit"><img src="<c:url value="/resources/social/twitter/sign-in-with-twitter-d.png"/>" /></button>
-	</form>
+    <a href="<c:url value="/auth/twitter"/>"><img src="<c:url value="/resources/social/twitter/sign-in-with-twitter-d.png"/>" border="0"/></a><br/>
 
 	<!-- FACEBOOK SIGNIN -->
-<%--
- 	<form name="fb_signin" id="fb_signin" action="<c:url value="/signin/facebook"/>" method="POST">
-        <input type="hidden" name="scope" value="publish_stream,user_photos,offline_access" />
-		<button type="submit"><img src="<c:url value="/resources/social/facebook/sign-in-with-facebook.png"/>" /></button>
-	</form>
- --%>
- 
     <a href="<c:url value="/auth/facebook"/>"><img src="<c:url value="/resources/social/facebook/sign-in-with-facebook.png"/>" border="0"/></a><br/>
  
 	<!-- LINKEDIN SIGNIN -->
-	<form name="li_signin" id="li_signin" action="<c:url value="/signin/linkedin"/>" method="POST">
-		<button type="submit">Sign In with LinkedIn</button>
-	</form>
+    <a href="<c:url value="/auth/linkedin"/>">Sign In with LinkedIn</a><br/>
 	
